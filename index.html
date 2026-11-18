@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff2d7">
+<title>崁頂放火馬｜庄頭記憶販賣機</title>
+<style>
+:root{--cream:#fff2d7;--paper:#ffebc1;--orange:#d95736;--orange2:#ef8054;--yellow:#f5ce70;--ink:#493c32;--brown:#80634b;--green:#71836b}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(#9b7752 .7px,transparent .7px);background-size:9px 9px}
+button{font:inherit;cursor:pointer}button:focus-visible{outline:3px dashed var(--orange);outline-offset:4px}
+header{max-width:1080px;margin:auto;padding:22px 24px 0;display:flex;justify-content:space-between;align-items:center}
+.brand{font-weight:1000;letter-spacing:.12em;font-size:13px}.brand span{color:var(--orange)}
+.sound{border:2px solid var(--ink);border-radius:99px;background:transparent;padding:8px 13px;color:var(--ink);font-size:12px;font-weight:900}
+main{max-width:1080px;margin:auto;padding:20px 24px 65px}
+.hero{text-align:center;margin:15px auto 28px}.eyebrow{font-size:11px;font-weight:1000;letter-spacing:.25em;color:var(--orange)}
+h1{font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(40px,7vw,72px);line-height:1.05;margin:12px 0;color:var(--orange);text-shadow:3px 3px 0 var(--yellow)}
+.hero p{line-height:1.85;color:var(--brown);font-size:14px;margin:14px auto 0;max-width:630px}
+.history{max-width:850px;margin:0 auto 36px;position:relative;padding:20px 24px 22px;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.history:before,.history:after{content:"✳";position:absolute;color:var(--orange);font-size:24px;background:var(--cream);padding:0 7px;top:-16px}.history:before{left:10px}.history:after{right:10px}
+.history-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.history h2{font-family:Georgia,serif;font-size:24px;margin:0}.history-tag{font-size:10px;font-weight:900;letter-spacing:.12em;color:var(--orange)}
+.history p{font-size:13px;line-height:1.95;color:#665744;margin:12px 0 0}
+.history details{margin-top:12px}.history summary{font-size:12px;font-weight:900;color:var(--orange);cursor:pointer}
+.note{font-size:11px!important;background:#f9e4b6;padding:9px 12px;border-left:4px solid var(--orange)}
+.stage{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center}
+.machine-wrap{max-width:530px;width:100%;margin:auto}
+.machine-caption{text-align:center;font-size:10px;font-weight:900;letter-spacing:.2em;color:var(--brown);margin-bottom:11px}
+.machine{background:var(--orange);border:4px solid var(--ink);border-radius:30px 30px 14px 14px;padding:18px 18px 22px;box-shadow:9px 10px 0 var(--ink);position:relative;transform:rotate(-.5deg)}
+.machine:before{content:"";position:absolute;left:13px;right:13px;top:10px;height:8px;border-radius:8px;background:var(--yellow)}
+.machine-title{margin:9px 0 14px;background:var(--ink);color:var(--cream);border-radius:9px;text-align:center;padding:12px 8px;font-family:Georgia,serif;font-size:16px;letter-spacing:.1em}
+.machine-title small{display:block;color:var(--yellow);font:900 9px Arial,sans-serif;letter-spacing:.24em;margin-top:5px}
+.window{background:#f8d98d;border:5px solid var(--ink);border-radius:13px;padding:13px;min-height:184px;box-shadow:inset 0 0 0 3px #e8bc63}
+.toys{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.toy{background:var(--cream);border:2px solid var(--ink);border-radius:9px;min-height:145px;padding:9px 5px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.toy svg{width:65px;height:76px;overflow:visible}.toy b{font-size:10px;letter-spacing:.06em}.toy small{font-size:9px;color:var(--brown)}
+.controls{display:flex;align-items:center;justify-content:space-between;padding:14px 5px 0;gap:8px}
+.slot{width:52px;height:9px;border:2px solid var(--ink);background:#382b26;border-radius:8px}.tiny{font-size:9px;color:var(--cream);font-weight:1000;letter-spacing:.12em}
+.knob{width:56px;height:56px;border:4px solid var(--ink);border-radius:50%;background:var(--yellow);box-shadow:3px 4px 0 #713d2e;position:relative;flex:none}
+.knob:before{content:"";position:absolute;left:21px;top:5px;width:7px;height:22px;background:var(--orange);border:2px solid var(--ink);border-radius:7px;transform-origin:50% 21px}
+.knob:active{transform:rotate(45deg)}
+.chute{width:120px;height:31px;margin:15px auto 0;border:3px solid var(--ink);border-top:0;border-radius:0 0 12px 12px;background:#74402e}
+.panel{padding:6px 0}.step{font-size:10px;color:var(--orange);font-weight:1000;letter-spacing:.2em;border-bottom:2px solid var(--orange);padding-bottom:7px;display:inline-block;margin-bottom:12px}
+.panel h2{font: bold 30px/1.25 Georgia,"Noto Serif TC",serif;margin:0 0 10px}.panel p{font-size:13px;line-height:1.85;color:var(--brown);margin:0 0 17px}
+.routes{display:grid;gap:9px}.route{width:100%;border:2px solid var(--ink);border-radius:8px;background:#fff8e9;color:var(--ink);display:flex;align-items:center;text-align:left;gap:12px;padding:11px 13px;transition:.16s}
+.route:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}.route.selected{background:var(--ink);color:var(--cream);box-shadow:4px 4px 0 var(--orange)}
+.route .ico{font-size:25px;width:35px;text-align:center}.route b{font-size:13px;display:block}.route small{font-size:10px;opacity:.75}
+.primary{border:0;background:var(--orange);color:#fff6e2;font-weight:1000;letter-spacing:.08em;padding:14px 17px;border-radius:7px;box-shadow:4px 5px 0 var(--ink);transition:.15s}
+.primary:hover{transform:translate(-2px,-2px);box-shadow:6px 7px 0 var(--ink)}.primary:active{transform:translate(2px,2px);box-shadow:1px 2px 0 var(--ink)}.primary:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+#draw{width:100%;margin-top:18px}.hint{text-align:center;font-size:10px;color:var(--brown);margin-top:12px}
+.result{display:none;text-align:center;max-width:700px;margin:35px auto 0}.result.show{display:block;animation:rise .5s ease both}
+.ticket{background:#fff6df;border:2px solid var(--ink);box-shadow:7px 8px 0 var(--ink);padding:25px 28px;position:relative;max-width:580px;margin:auto;transform:rotate(.4deg)}
+.ticket:before,.ticket:after{content:"";position:absolute;width:22px;height:22px;background:var(--cream);border:2px solid var(--ink);border-radius:50%;top:50%;transform:translateY(-50%)}.ticket:before{left:-14px}.ticket:after{right:-14px}
+.ticket-top,.ticket-bottom{display:flex;justify-content:space-between;gap:8px;font-size:9px;font-weight:1000;letter-spacing:.12em;color:var(--orange)}
+.ticket-top{border-bottom:1px dashed #a78d68;padding-bottom:11px}.ticket h3{font: bold clamp(26px,5vw,39px) Georgia,"Noto Serif TC",serif;margin:18px 0 5px}
+.ticket .subtitle{font-size:11px;font-weight:1000;color:var(--orange);letter-spacing:.12em}.ticket .story{font:14px/1.9 Georgia,"Noto Serif TC",serif;margin:15px auto;max-width:450px}
+.ticket-bottom{border-top:1px dashed #a78d68;padding-top:11px;color:var(--brown)}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:22px 0}.secondary{border:2px solid var(--ink);background:transparent;color:var(--ink);border-radius:6px;padding:10px 15px;font-weight:900;font-size:12px}.secondary:hover{background:var(--ink);color:var(--cream)}
+.shelf{max-width:720px;margin:42px auto 0;border-top:2px solid var(--ink);padding-top:18px}.shelf-head{display:flex;justify-content:space-between;align-items:center}.shelf h3{font: bold 22px Georgia,serif;margin:0}.count{font-size:10px;color:var(--orange);font-weight:1000}.saved{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}.saved-item{background:#ffebc1;border:1px dashed var(--ink);padding:8px 10px;font-size:11px;display:flex;gap:8px;align-items:center}.saved-item button{border:0;background:none;color:var(--orange);font-weight:1000}.empty{font-size:11px;color:var(--brown);margin-top:12px}
+footer{text-align:center;font-size:9px;letter-spacing:.15em;color:#987d5c;margin-top:45px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--ink);color:var(--cream);padding:11px 17px;border-radius:30px;font-size:12px;z-index:5;transition:.25s;box-shadow:3px 4px 0 var(--orange);white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0)}
+.machine.spinning .toy{animation:bop .16s infinite alternate}.machine.spinning .knob{animation:spin .65s ease-in-out}.machine.spinning .window{background:#ffe7a5}
+@keyframes bop{to{transform:translateY(-5px)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){header{padding:16px 17px 0}main{padding:16px 17px 50px}.hero{margin:12px auto 24px}.history{padding:18px 15px;margin-bottom:30px}.stage{grid-template-columns:1fr;gap:27px}.machine-wrap{max-width:470px}.panel{max-width:500px;margin:auto;width:100%}.machine{padding:17px 14px 19px}.toy{min-height:130px}.toy svg{width:58px;height:68px}.panel h2{font-size:27px}.ticket{padding:22px 20px}}
+@media(max-width:380px){.toy{min-height:115px}.toy b{font-size:9px}.machine-title{font-size:13px}.knob{width:50px;height:50px}.knob:before{left:17px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<header><div class="brand">庄頭小旅行 <span>✳</span> FOLK MEMORY LAB</div><button class="sound" id="sound" aria-pressed="false">♫ 音效：關</button></header>
+<main>
+<section class="hero"><div class="eyebrow">A LITTLE FOLKLORE, A LOT OF WONDER</div><h1>崁頂放火馬</h1><p>聽一段庄頭傳說，再轉動記憶販賣機。<br>把節慶、信仰與想像，抽成一張可以收藏的文化票券。</p></section>
+<section class="history" aria-labelledby="historyTitle">
+ <div class="history-head"><h2 id="historyTitle">先認識放火馬</h2><span class="history-tag">LOCAL MEMORY / 01</span></div>
+ <p>「放火馬」是臺灣民間迎神、祈安與庄頭祭典脈絡中，帶有火光、巡行與送煞意象的民俗稱呼之一。崁頂的地方信仰與祭典，承載著居民對平安、庄頭團結及世代傳承的心意。這個互動小作品以「火馬」作為文化想像入口，邀請你認識地方故事、感受節慶氣氛。</p>
+ <p class="note">文化小提醒：不同地區的「放火馬」儀式名稱、舉行時間、流程與由來可能不同。本頁第一版不把未經地方志、廟方或耆老確認的細節寫成史實；若要正式展示，建議補上崁頂特定村落、廟宇、年份與口述來源。</p>
+ <details><summary>為什麼先保留一點空白？點我看說明</summary><p>地方民俗常同時存在文獻記載與口述版本。尤其「崁頂」可能指不同行政區或庄頭；在未確認是哪一個崁頂、哪一場祭典前，直接指定起源年代或儀式細節容易造成誤植。這個版本先提供文化導覽框架，後續可依你提供的在地資料補成完整沿革。</p></details>
+</section>
+<section class="stage" id="stage">
+ <div class="machine-wrap"><div class="machine-caption">FIG. 01 — KANTING FOLK MEMORY DISPENSER</div>
+  <div class="machine" id="machine">
+   <div class="machine-title">THE FIRE HORSE MACHINE<small>TURN A LITTLE MEMORY INTO A TICKET</small></div>
+   <div class="window"><div class="toys">
+    <div class="toy"><svg viewBox="0 0 80 90" aria-hidden="true"><path d="M18 55Q9 38 22 26L17 10 34 20Q47 15 58 28L68 21 65 43Q72 57 57 66L52 78H25L28 65Z" fill="#d95736" stroke="#493c32" stroke-width="3" stroke-linejoin="round"/><path d="M23 30Q10 43 21 55" fill="none" stroke="#f5ce70" stroke-width="7"/><circle cx="49" cy="37" r="3" fill="#493c32"/><path d="M53 48q-8 7-15 0" fill="none" stroke="#493c32" stroke-width="2.5"/><path d="M27 72l-5 9m29-9 5 9" stroke="#493c32" stroke-width="4" stroke-linecap="round"/></svg><b>火馬意象</b><small>FIRE HORSE</small></div>
+    <div class="toy"><svg viewBox="0 0 80 90" aria-hidden="true"><path d="M40 7C27 24 17 35 18 51a22 22 0 0044 0C63 35 52 22 40 7Z" fill="#ef8054" stroke="#493c32" stroke-width="3"/><path d="M40 30c-7 10-12 17-10 25a11 11 0 0022 0c1-8-5-17-12-25Z" fill="#f5ce70"/><path d="M40 43c-4 7-6 10-4 15a5 5 0 0010 0c1-5-2-10-6-15Z" fill="#fff2d7"/></svg><b>平安火光</b><small>LIGHT & PRAYER</small></div>
+    <div class="toy"><svg viewBox="0 0 80 90" aria-hidden="true"><path d="M40 9 47 31 69 23 55 43 73 57 49 57 40 81 31 57 7 57 25 43 11 23 33 31Z" fill="#f5ce70" stroke="#493c32" stroke-width="3" stroke-linejoin="round"/><circle cx="40" cy="47" r="8" fill="#d95736"/></svg><b>庄頭團結</b><small>TOGETHER</small></div>
+   </div></div>
+   <div class="controls"><div><div class="slot"></div><div class="tiny">投入一枚好奇心</div></div><div class="tiny">PULL TO DRAW</div><button class="knob" id="knob" aria-label="拉動販賣機把手"></button></div><div class="chute"></div>
+  </div>
+ </div>
+ <div class="panel"><div class="step">STEP 01 / CHOOSE A THEME</div><h2>你想帶走哪一份<br>放火馬記憶？</h2><p>選一個你感興趣的主題，讓販賣機替你抽出一張文化探索票券。</p>
+  <div class="routes" id="routes">
+   <button class="route" data-route="ritual"><span class="ico">🔥</span><span><b>儀式與火光</b><small>看看火馬意象與祈安想像</small></span></button>
+   <button class="route" data-route="community"><span class="ico">🏮</span><span><b>庄頭與信仰</b><small>感受地方祭典中的共同記憶</small></span></button>
+   <button class="route" data-route="craft"><span class="ico">🐎</span><span><b>民俗與工藝</b><small>從造型、道具到節慶美學</small></span></button>
+   <button class="route" data-route="legacy"><span class="ico">🌼</span><span><b>傳承與新世代</b><small>想像如何把地方故事說下去</small></span></button>
+  </div>
+  <button class="primary" id="draw" disabled>先選一個主題　→</button><div class="hint">選好主題後，按按鈕或拉動販賣機把手抽票</div>
+ </div>
+</section>
+<section class="result" id="result" aria-live="polite"><div class="step">YOUR FOLK MEMORY TICKET</div>
+ <div class="ticket"><div class="ticket-top"><span>KANTING FOLK CULTURE PASS</span><span id="number">NO. 0001</span></div><h3 id="ticketTitle">火光裡的平安願</h3><div class="subtitle" id="ticketSub">RITUAL & LIGHT</div><p class="story" id="ticketStory"></p><div class="ticket-bottom"><span id="ticketRoute">儀式與火光</span><span>KEEP THIS MEMORY</span></div></div>
+ <div class="actions"><button class="primary" id="save" style="width:auto">♡ 收藏票券</button><button class="secondary" id="again">↻ 再抽一張</button><button class="secondary" id="restart">重新選主題</button></div>
+</section>
+<section class="shelf"><div class="shelf-head"><h3>我的庄頭記憶簿</h3><span class="count" id="count">0 TICKETS</span></div><div class="saved" id="saved"></div></section>
+<footer>LOCAL STORIES DESERVE CARE · CULTURE IS A LIVING MEMORY</footer>
+</main><div class="toast" id="toast" role="status"></div>
+<script>
+(()=>{
+const stories={
+ritual:{label:"儀式與火光",items:[
+["火光裡的平安願","RITUAL & LIGHT","火光常讓人聯想到驅除不祥、祈求平安的心願。這張票邀請你留意祭典中的光、聲響與人們共同許下的祝福。"],
+["一匹馬的象徵","SYMBOLS IN MOTION","馬的形象帶著力量、速度與守護的想像。不同地方如何使用火馬意象，值得回到當地文史與儀式脈絡細細理解。"],
+["節慶夜色觀察員","NIGHT OF THE FESTIVAL","如果走進祭典現場，試著觀察光線、隊伍、音樂與人群如何交織。尊重儀式、遵循現場規範，也是參與文化的一部分。"]]},
+community:{label:"庄頭與信仰",items:[
+["庄頭一起走","A VILLAGE TOGETHER","地方祭典不只是儀式，也是居民相聚、互相照應的時刻。每一雙幫忙的手，都讓庄頭記憶繼續往下走。"],
+["廟埕的故事採集者","TEMPLE STORIES","廟埕可能是消息交換、節慶準備與世代相遇的地方。找一位在地長輩聊聊，或許就能聽見一段只屬於這個庄頭的故事。"],
+["平安是大家的願望","A SHARED WISH","祈安儀式背後，常有對家人、土地與生活的祝福。這張票提醒我們：地方信仰也是理解社區情感的一扇窗。"]]},
+craft:{label:"民俗與工藝",items:[
+["道具的細節","MADE BY MANY HANDS","一場祭典需要許多準備。從材料、裝飾到現場佈置，細節裡藏著地方審美與參與者的巧思。"],
+["色彩的節慶學","COLORS OF FOLKLORE","橘紅像熱鬧與火光，奶黃像燈火與祝願。把你看到的色彩記下來，也是一種認識民俗的方法。"],
+["小小民俗設計師","MAKE A MEMORY","試著用紙、線條與幾何形狀畫出你心中的火馬。創作時記得標明這是個人詮釋，不把想像誤當成傳統定制。"]]},
+legacy:{label:"傳承與新世代",items:[
+["把故事說給明天","STORIES TO TOMORROW","文化傳承不只保存物件，也保存說故事的人。訪談、錄音與整理照片，都能讓地方記憶有機會被下一代看見。"],
+["新世代的庄頭導覽員","A NEW GENERATION","用自己的語言介紹家鄉，從地圖、插畫或短影片開始。新的表達方式，也能成為連結地方文化的橋梁。"],
+["留下一個問題","ASK THE ELDERS","每段歷史都值得追問：誰記得這項習俗？以前在哪裡舉行？什麼時候改變？好問題，是田野探索的第一步。"]]}
+};
+const $=id=>document.getElementById(id);let selected=null,current=null,busy=false,soundOn=false,audio=null,num=1,saved=[];
+try{saved=JSON.parse(localStorage.getItem("kantingFireHorseSaved")||"[]");if(!Array.isArray(saved))saved=[]}catch(e){saved=[]}
+function beep(f=440,d=.12){if(!soundOn)return;try{audio=audio||new(window.AudioContext||window.webkitAudioContext)();if(audio.state==="suspended")audio.resume();let o=audio.createOscillator(),g=audio.createGain();o.frequency.value=f;o.type="sine";g.gain.setValueAtTime(.0001,audio.currentTime);g.gain.exponentialRampToValueAtTime(.1,audio.currentTime+.02);g.gain.exponentialRampToValueAtTime(.0001,audio.currentTime+d);o.connect(g);g.connect(audio.destination);o.start();o.stop(audio.currentTime+d+.02)}catch(e){}}
+function toast(t){$("toast").textContent=t;$("toast").classList.add("show");clearTimeout(toast.timer);toast.timer=setTimeout(()=>$("toast").classList.remove("show"),2200)}
+function choose(key){if(busy)return;selected=key;document.querySelectorAll(".route").forEach(b=>b.classList.toggle("selected",b.dataset.route===key));$("draw").disabled=false;$("draw").textContent="投下一枚好奇心，抽取票券　→";beep(560,.08);toast("主題選好了！準備抽取你的文化票券。")}
+function draw(){if(!selected||busy)return;busy=true;$("draw").disabled=true;$("knob").disabled=true;$("machine").classList.add("spinning");$("draw").textContent="正在整理庄頭記憶…";beep(270,.12);setTimeout(()=>beep(390,.12),160);setTimeout(()=>beep(530,.15),320);
+const arr=stories[selected].items,p=arr[Math.floor(Math.random()*arr.length)];
+setTimeout(()=>{current={route:selected,title:p[0],sub:p[1],story:p[2],number:num++};$("ticketTitle").textContent=p[0];$("ticketSub").textContent=p[1];$("ticketStory").textContent=p[2];$("number").textContent="NO. "+String(current.number).padStart(4,"0");$("ticketRoute").textContent=stories[selected].label;$("machine").classList.remove("spinning");$("result").classList.add("show");$("result").scrollIntoView({behavior:"smooth",block:"nearest"});$("draw").disabled=false;$("draw").textContent="再抽一張同主題票券　→";$("knob").disabled=false;busy=false;beep(690,.18);setTimeout(()=>beep(880,.2),130);toast("票券出爐！把這段記憶收藏起來吧。")},1050)}
+function persist(){try{localStorage.setItem("kantingFireHorseSaved",JSON.stringify(saved))}catch(e){toast("瀏覽器未允許儲存，收藏只保留在本次頁面")}}
+function render(){ $("saved").innerHTML="";$("count").textContent=saved.length+" TICKETS";if(!saved.length){let e=document.createElement("div");e.className="empty";e.textContent="還沒有收藏。抽到喜歡的文化票券，就把它留下來。";$("saved").append(e);return}saved.forEach((v,i)=>{let d=document.createElement("div");d.className="saved-item";let s=document.createElement("span");s.textContent="✳ "+v.title;let b=document.createElement("button");b.textContent="×";b.type="button";b.setAttribute("aria-label","刪除"+v.title);b.onclick=()=>{saved.splice(i,1);persist();render();toast("已移除收藏")};d.append(s,b);$("saved").append(d)})}
+$("routes").addEventListener("click",e=>{let b=e.target.closest(".route");if(b)choose(b.dataset.route)});$("draw").onclick=draw;$("knob").onclick=draw;
+$("save").onclick=()=>{if(!current)return;if(saved.some(v=>v.title===current.title&&v.story===current.story)){toast("這張票券已收藏過了");return}saved.unshift({...current});persist();render();beep(740,.12);toast("收藏成功！已放進記憶簿。")};
+$("again").onclick=draw;$("restart").onclick=()=>{if(busy)return;selected=null;current=null;document.querySelectorAll(".route").forEach(b=>b.classList.remove("selected"));$("draw").disabled=true;$("draw").textContent="先選一個主題　→";$("result").classList.remove("show");$("stage").scrollIntoView({behavior:"smooth"});toast("重新開始，選一個新的探索主題吧！")};
+$("sound").onclick=()=>{soundOn=!soundOn;$("sound").textContent=soundOn?"♫ 音效：開":"♫ 音效：關";$("sound").setAttribute("aria-pressed",String(soundOn));beep(620,.1);toast(soundOn?"音效已開啟":"音效已關閉")};
+render();
+})();
+</script>
+</body></html>
